@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Çiçek Efektli Kamera (PNG)</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MediaPipe Kütüphaneleri -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <video id="webcam" playsinline muted></video>
+    <canvas id="cicek-canvas"></canvas>
+
+    <!-- Arayüz Elemanları -->
+    <div id="ust-panel">
+        <div class="rozet">🌸 <span id="sayac">0</span></div>
+        <div class="buton-grubu">
+            <button class="btn" id="btn-rehber">🖐️ Rehber</button>
+            <button class="btn" id="btn-cicekler">🎨 Çiçekler</button>
+        </div>
+    </div>
+
+    <!-- Rehber Pop-up -->
+    <div class="popup" id="popup-rehber">
+        <div class="rehber-satir"><span>☝️</span> <b>İşaret:</b> Çiçek Çizer</div>
+        <div class="rehber-satir"><span>👌</span> <b>Çimdik:</b> Çiçek Patlatır</div>
+        <div class="rehber-satir"><span>✌️</span> <b>V İşareti:</b> Çiçek Çeker</div>
+        <div class="rehber-satir"><span>🤟</span> <b>3 Parmak:</b> Çiçek Tacı Yapar</div>
+        <div class="rehber-satir"><span>🖐️</span> <b>Açık El:</b> Çiçekleri Dağıtır</div>
+        <div class="rehber-satir"><span>✊</span> <b>Yumruk:</b> Hepsini Temizler</div>
+    </div>
+
+    <!-- Çiçek Seçim Pop-up -->
+    <div class="popup" id="popup-cicekler">
+        <button class="secenek-btn aktif" data-tip="Rastgele">🌈 Rastgele PNG</button>
+        <button class="secenek-btn" data-tip="flower01">🌸 Çiçek 1</button>
+        <button class="secenek-btn" data-tip="flower05">🌺 Çiçek 5</button>
+        <button class="secenek-btn" data-tip="flower10">🌼 Çiçek 10</button>
+        <button class="secenek-btn" data-tip="flower15">🌻 Çiçek 15</button>
+        <button class="secenek-btn" data-tip="flower19">🌷 Çiçek 19</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
